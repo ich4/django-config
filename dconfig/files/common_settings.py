@@ -57,8 +57,19 @@ else:
                 'HOST': getattr(configs, 'DB_HOST', '127.0.0.1'),
             }
         }
+    elif ENGINE == 'postgresql':
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': getattr(configs, 'DB_NAME', 'dbname'),
+                'USER': getattr(configs, 'DB_USER', 'root'),
+                'PASSWORD': getattr(configs, 'DB_PASSWORD', '127.0.0.1'),
+                'HOST': getattr(configs, 'DB_HOST', '5432'),
+            }
+        }
 
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Bangkok'
 USE_I18N = True

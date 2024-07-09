@@ -22,4 +22,7 @@ REST_FRAMEWORK = {
     #     'resend_otp': '10/second',
     #     'request_otp': '10/second',
     # },
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
 }
